@@ -3,7 +3,6 @@ import 'package:image_picker/image_picker.dart';
 import 'dart:io';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:convert';
-import 'package:intl/intl.dart';
 import 'package:http/http.dart' as http;
 
 
@@ -150,7 +149,8 @@ class _MyAppState extends State<MyApp> {
                                   Row(
                                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                     children: [
-                                      Text(DateFormat(format).format(DateTime(int.parse(gifts[i]['year']), int.parse(gifts[i]['month']), int.parse(gifts[i]['day'])))),
+                                      Text(gifts[i]['years']+'-'+gifts[i]['month']+'-'+gifts[i]['day']),
+                                      //Text(DateFormat(format).format(DateTime(int.parse(gifts[i]['year']), int.parse(gifts[i]['month']), int.parse(gifts[i]['day'])))),
                                       UseButton(applyUse : applyUse, i : i, isUsed : gifts[i]['isUsed'], saveGifts: saveGifts,),
                                       IconButton(
                                           onPressed: (){
